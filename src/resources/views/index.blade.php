@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<body>
     <div class="header__wrap">
         <div class="content__header">
             <div class="content__title">肌タイプ診断</div>
@@ -34,30 +33,38 @@
                     <div class="answer__detail">あなたの肌は、理想的なバランスを持つ普通肌です。</div>
                     <div class="answer__features"><strong>特徴:</strong> 水分量と皮脂量のバランスが良く、トラブルが少ない肌質。ただし、季節の変化や環境の影響で状態が揺らぐことがあります。</div>
                     <div class="answer__care"><strong>おすすめケア:</strong> 肌を守る保湿ケアを続け、バランスを崩さないように維持しましょう。</div>
-                    <button class="answer__best" href="/products/moisturizer">おすすめ保湿クリームを見る</button>
+                    <button class="answer__best">
+                        <a href="{{ route('normal') }}">おすすめ保湿クリームを見る</a>
+                    </button>
                 </div>
                 <div id="a2" class="txt_hide">
                     <div class="answer__title">脂性肌</div>
                     <div class="answer__detail">あなたの肌は、皮脂分泌が活発な脂性肌です。</div>
                     <div class="answer__features"><strong>特徴:</strong> 全体的にテカリやすく、毛穴が目立つことがあります。ニキビや吹き出物ができやすい傾向にあります。</div>
                     <div class="answer__care"><strong>おすすめケア:</strong> 皮脂をコントロールしつつ、保湿を欠かさないケアが必要です。</div>
-                    <button class="answer__best" href="/products/oil-control">皮脂ケアにおすすめの商品を見る</button>
+                    <button class="answer__best">
+                        <a href="{{ route('oily') }}">皮脂ケアにおすすめの商品を見る</a>
+                    </button>
                 </div>
                 <div id="a3" class="txt_hide">
                     <div class="answer__title">乾燥肌</div>
                     <div class="answer__detail">あなたの肌は、水分量と皮脂量が少ない乾燥肌です。</div>
                     <div class="answer__features"><strong>特徴:</strong> 肌がカサつきやすく、小じわが目立ちやすい傾向にあります。刺激に弱い場合もあります。</div>
                     <div class="answer__care"><strong>おすすめケア:</strong> 高保湿のクリームや化粧水を使い、バリア機能を高めましょう。</div>
-                    <button class="answer__best" href="/products/hydrating-cream">乾燥肌におすすめの商品を見る</button>
+                    <button class="answer__best">
+                        <a href="{{ route('dry') }}">乾燥肌におすすめの商品を見る</a>
+                    </button>
                 </div>
                 <div id="a4" class="txt_hide">
                     <div class="answer__title">混合肌</div>
                     <div class="answer__detail">あなたの肌は、部位によって特性が異なる混合肌です。</div>
                     <div class="answer__features"><strong>特徴:</strong> Tゾーンは脂っぽく、Uゾーンは乾燥しやすい傾向にあります。ケア方法を部位ごとに変える必要があります。</div>
                     <div class="answer__care"><strong>おすすめケア:</strong> 部位ごとに異なるケアを行いましょう。Tゾーンは皮脂ケア、Uゾーンは保湿ケアを重点的に。</div>
-                    <button class="answer__best" href="/products/combo-care">混合肌に最適なケア商品を見る</button>
+                    <button class="answer__best">
+                        <a href="{{ route('combo') }}">混合肌に最適なケア商品を見る</a>
+                    </button>
                 </div>
-                <button class="answer__redo" href="javaScript:OnAgainClick();">もう1度診断する</button>
+                <button class="answer__redo" id="restart" class="btn btn-secondary">もう1度診断する</button>
             </div>
         </div>
         <div id="btn_area" class="txt_display">
@@ -90,14 +97,26 @@
             });
 
             btnNo.addEventListener('click', function () {
-                console.log("No clicked");
                 nextQuestion();
             });
 
             restartBtn.addEventListener('click', function () {
                 yesAnswers = [];
                 n = 0;
-                resetQuiz();
+
+                document.querySelectorAll('.question_area div').forEach(div => {
+                    div.classList.add('txt_hide');
+                    div.classList.remove('txt_display');
+                });
+
+                document.getElementById(qArray[0]).classList.add('txt_display');
+                document.getElementById(qArray[0]).classList.remove('txt_hide');
+
+                // ボタンエリアを表示、結果エリアを非表示
+                document.getElementById('btn_area').classList.add('txt_display');
+                document.getElementById('btn_area').classList.remove('txt_hide');
+                document.getElementById('result_area').classList.add('txt_hide');
+                document.getElementById('result_area').classList.remove('txt_display');
             });
 
             function nextQuestion() {
@@ -130,21 +149,11 @@
                     scores[result] = results[result].filter(question => yesAnswers.includes(question)).length;
                 }
 
-                return Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-            }
+                const maxScore = Math.max(...Object.values(scores)); // 最大スコアを取得
+                const bestMatches = Object.keys(scores).filter(key => scores[key] === maxScore); // 最大スコアを持つ結果を取得
 
-            function resetQuiz() {
-                document.querySelectorAll('.question_area div').forEach(div => {
-                    div.classList.add('txt_hide');
-                    div.classList.remove('txt_display');
-                });
-
-                document.getElementById(qArray[0]).classList.add('txt_display');
-                document.getElementById(qArray[0]).classList.remove('txt_hide');
-                document.getElementById('result_area').classList.add('txt_hide');
-                document.getElementById('result_area').classList.remove('txt_display');
-                document.getElementById('btn_area').classList.add('txt_display');
-                document.getElementById('btn_area').classList.remove('txt_hide');
+                // 結果が複数ある場合は、最初の結果を選択する
+                return bestMatches[0];
             }
         });
     </script>
