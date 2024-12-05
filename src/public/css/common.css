@@ -22,7 +22,7 @@ header {
 
 .header__left {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .header__icon {
@@ -30,31 +30,31 @@ header {
     align-items: center;
 }
 
-.drawer__hidden {
-    display: none;
-}
-
-.drawer__open {
+.nav__icon {
     display: flex;
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 100;
     cursor: pointer;
-    background-color: rgb(63, 90, 242);
+    background-color: #45c1fd;
     border-radius: 5px;
     box-shadow: 2px 2px 5px gray;
 }
 
-.drawer__open:hover {
+.drawer__hidden {
+    display: none;
+}
+
+.nav__icon:hover {
     opacity: 0.8;
 }
 
-.drawer__open span,
-.drawer__open span:before,
-.drawer__open span:after {
+.nav__icon span,
+.nav__icon span:before,
+.nav__icon span:after {
     content: "";
     display: block;
     height: 1px;
@@ -65,27 +65,27 @@ header {
     position: absolute;
 }
 
-.drawer__open span:before {
+.nav__icon span:before {
     bottom: 6px;
     width: 10px;
 }
 
-.drawer__open span:after {
+.nav__icon span:after {
     top: 6px;
     width: 6px;
 }
 
-#drawer__input:checked ~ .drawer__open span {
+#drawer__input:checked ~ .nav__icon span {
     background: rgba(255, 255, 255, 0);
 }
 
-#drawer__input:checked ~ .drawer__open span::before {
+#drawer__input:checked ~ .nav__icon span::before {
     bottom: 0;
     transform: rotate(45deg);
     width: 16px;
 }
 
-#drawer__input:checked ~ .drawer__open span::after {
+#drawer__input:checked ~ .nav__icon span::after {
     top: 0;
     transform: rotate(-45deg);
     width: 16px;
@@ -136,7 +136,7 @@ header {
 }
 
 .nav__item-link {
-    color: rgb(63, 90, 242);
+    color: #45c1fd;
     text-decoration: none;
     font-weight: bold;
 }
@@ -145,14 +145,14 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: rgb(63, 90, 242);
+    color: #45c1fd;
     font-size: 2.8rem;
     font-weight: bold;
 }
 
 .header__logo {
     font-size: 2.8rem;
-    color: rgb(63, 90, 242);
+    color: #45c1fd;
     padding-left: 16px;
     font-weight: bold;
 }

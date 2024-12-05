@@ -1,0 +1,63 @@
+.result-page {
+    width: 90%;
+    text-align: center;
+}
+
+.result-page__title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.answer__header {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.answer__title {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.answer__detail {
+    font-size: 20px;
+}
+
+.answer__features,
+.answer__care {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.answer__best {
+    font-size: 16px;
+    padding: 10px 5px;
+    margin-top: 30px;
+    background-color: pink;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.answer__best__button {
+    text-decoration: none;
+    color: black;
+}
+
+.result-page__actions {
+    width: 30%;
+    font-size: 16px;
+    padding: 10px 5px;
+    margin-top: 20px ;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+    text-align: center;
+}
+
+.result-page__btn {
+    text-decoration: none;
+    color: black;
+}

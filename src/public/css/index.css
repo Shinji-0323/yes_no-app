@@ -37,40 +37,24 @@
     display: block;
 }
 
-.answer__header {
-    font-size: 20px;
-}
-
-.answer__title {
-    font-size: 26px;
-    font-weight: bold;
-    padding: 10px 0;
-}
-
-.answer__detail {
-    font-size: 20px;
-}
-
-.answer__features,
-.answer__care {
+.answer__check {
     font-size: 16px;
-    padding-top: 10px;
-}
-
-.answer__best {
-    font-size: 16px;
-    padding: 10px 5px;
+    padding: 10px 30px;
     margin-top: 30px;
     background-color: pink;
+    border: 1px solid #eee;
+    cursor: pointer;
     border-radius: 4px;
     box-shadow: 3px 3px 3px #A9A9A9;
+    text-decoration: none;
 }
 
 .answer__redo {
     font-size: 16px;
-    padding: 10px 5px;
+    padding: 10px 10px;
     margin-top: 20px ;
-    border-color: pink;
+    border: 1px solid #eee;
+    cursor: pointer;
     border-radius: 4px;
     box-shadow: 3px 3px 3px #A9A9A9;
 }
@@ -89,6 +73,7 @@
     font-weight: bold;
     text-align: center;
     padding: 10px;
+    margin: 0 10px;
 }
 
 .btn_yes {

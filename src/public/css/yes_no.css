@@ -1,0 +1,92 @@
+.start-page,
+.gender-page,
+.age-page {
+    width: 90%;
+    text-align: center;
+}
+
+.start-page__title,
+.gender-page__title,
+.age-page__title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.start-page__text {
+    font-size: 20px;
+}
+
+.start-page__form,
+.gender-page__form,
+.age-page__form {
+    padding: 20px;
+}
+
+.start-page__btn {
+    width: 50%;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.start-page__btn:checked {
+    color: #eee;
+}
+
+.start-page__btn:disabled {
+    color: #eee;
+    cursor: not-allowed;
+}
+
+.gender-page__btn {
+    width: 20%;
+    height: 50px;
+    font-size: 15px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.male {
+    background-color: lightskyblue;
+}
+
+.female {
+    background-color: lightpink;
+}
+
+.age-page__select {
+    width: 30%;
+    height: 40px;
+    padding-left: 10px;
+    border-right: 1px solid #cccccc;
+    background-color: #fff;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.age-page__btn {
+    width: 20%;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}

@@ -5,8 +5,15 @@
 @endsection
 
 @section('content')
-    <div class="content">
-        <h1>脂性肌におすすめの商品</h1>
-        <p>ここに脂性肌用の商品情報を記載してください。</p>
+    <div class="item__wrap">
+        <div class="item__header">
+            <h1 class="header__title">脂性肌におすすめの商品</h1>
+        </div>
+        <div class="item__detail">
+            <p class="item__title">ここに脂性肌用の商品情報を記載してください。</p>
+        </div>
+        <button class="result-page__actions">
+            <a href="{{ route('index') }}" class="result-page__btn">ホーム画面</a>
+        </button>
     </div>
 @endsection

@@ -1,0 +1,37 @@
+.item__wrap {
+    width: 90%;
+    text-align: center;
+}
+
+.item__header {
+    width: 90%;
+}
+
+.header__title {
+    font-size: 20px;
+}
+
+.item__detail {
+    width: 90%;
+}
+
+.item__title {
+    font-size: 18px;
+}
+
+.result-page__actions {
+    width: 30%;
+    font-size: 16px;
+    padding: 10px 5px;
+    margin-top: 20px ;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+    text-align: center;
+}
+
+.result-page__btn {
+    text-decoration: none;
+    color: black;
+}
