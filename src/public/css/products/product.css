@@ -4,7 +4,7 @@
 }
 
 .item__header {
-    width: 90%;
+    text-align: center;
 }
 
 .header__title {
@@ -12,7 +12,7 @@
 }
 
 .item__detail {
-    width: 90%;
+    text-align: center;
 }
 
 .item__title {

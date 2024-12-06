@@ -10,7 +10,7 @@
             <h1 class="header__title">混合肌におすすめの商品</h1>
         </div>
         <div class="item__detail">
-            <p class="item__title">ここに混合肌用の商品情報を記載してください。</p>
+            <p class="item__title">※ここに混合肌用の商品情報を記載してください。※</p>
         </div>
         <button class="result-page__actions">
             <a href="{{ route('index') }}" class="result-page__btn">ホーム画面</a>
