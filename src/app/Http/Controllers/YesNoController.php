@@ -2,33 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Diagnosis;
 
 class YesNoController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('start');
     }
 
-    public function gender()
+    public function gender(): View
     {
         return view('gender');
     }
 
-    public function age(Request $request)
+    public function age(Request $request): View
     {
         session(['gender' => $request->gender]); // 性別をセッションに保存
         return view('age');
     }
 
-    public function diagnosis(Request $request)
+    public function diagnosis(Request $request): View
     {
         session(['age' => $request->age]); // 年代をセッションに保存
         return view('index'); // 診断のYes/Noページ
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
+     */
     public function results()
     {
         // 診断結果のマッピング
@@ -57,7 +62,7 @@ class YesNoController extends Controller
         return view('results', compact('readableResult', 'gender', 'age'));
     }
 
-    public function storeResult(Request $request)
+    public function storeResult(Request $request): RedirectResponse
     {
         // セッションから性別と年代を取得
         $gender = session('gender');

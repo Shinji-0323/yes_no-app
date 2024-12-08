@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Diagnosis;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminController extends Controller
 {
-    public function results()
+    public function results(): \Illuminate\View\View
     {
         $diagnoses = Diagnosis::all();
 
@@ -38,7 +39,7 @@ class AdminController extends Controller
         return view('admin.results', ['diagnoses' => $processedDiagnoses]);
     }
 
-    public function export()
+    public function export(): StreamedResponse
     {
         $results = Diagnosis::all();
         // 性別と結果のマッピング
@@ -73,6 +74,10 @@ class AdminController extends Controller
 
         $callback = function () use ($csvData) {
             $file = fopen('php://output', 'w');
+            if ($file === false) {
+                throw new \RuntimeException('Failed to open output stream.');
+            }
+
             fputcsv($file, ['ID', '性別', '年代', '結果']); // CSVのヘッダー
             foreach ($csvData as $row) {
                 fputcsv($file, $row);
