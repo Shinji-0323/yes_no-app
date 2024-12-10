@@ -24,9 +24,6 @@ Route::post('/age', [YesNoController::class, 'age'])->name('age');
 Route::post('/diagnosis', [YesNoController::class, 'diagnosis'])->name('diagnosis');
 Route::get('/results', [YesNoController::class, 'results'])->name('results');
 Route::post('/result', [YesNoController::class, 'storeResult'])->name('result.store');
-Route::get('/thank-you', function () {
-    return view('thank_you');
-})->name('thank_you');
 
 Route::get('/products/normal', [ProductController::class, 'normal'])->name('normal');
 Route::get('/products/oily', [ProductController::class, 'oily'])->name('oily');
@@ -49,7 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/results', [AdminController::class, 'results'])->name('admin.results');
     Route::get('/admin/results/csv', [AdminController::class, 'export'])->name('admin.results.csv');
 });

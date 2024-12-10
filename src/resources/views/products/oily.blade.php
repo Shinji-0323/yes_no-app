@@ -15,5 +15,8 @@
         <button class="result-page__actions">
             <a href="{{ route('index') }}" class="result-page__btn">ホーム画面</a>
         </button>
+        <button class="result-page__actions">
+            <a href="{{ route('results') }}" class="result-page__btn">戻る</a>
+        </button>
     </div>
 @endsection

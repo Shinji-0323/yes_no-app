@@ -26,7 +26,7 @@
             <tr class="table__row">
                 <td class="table__item">{{ $diagnosis['id'] }}</td>
                 <td class="table__item">{{ $diagnosis['gender'] }}</td>
-                <td class="table__item">{{ $diagnosis['age'] }}代</td>
+                <td class="table__item">{{ $diagnosis['age'] }}</td>
                 <td class="table__item">{{ $diagnosis['result'] }}</td>
             </tr>
             @endforeach

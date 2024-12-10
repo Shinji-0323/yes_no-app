@@ -28,11 +28,16 @@ class AdminController extends Controller
 
         // データ加工
         $processedDiagnoses = $diagnoses->map(function ($diagnosis) use ($genderMapping, $resultMapping) {
+            $results = explode(',', $diagnosis->result);
+            $readableResults = array_map(function ($result) use ($resultMapping) {
+                return $resultMapping[$result] ?? $result;
+            }, $results);
+
             return [
                 'id' => $diagnosis->id,
                 'gender' => $genderMapping[$diagnosis->gender] ?? $diagnosis->gender,
                 'age' => $diagnosis->age . '代',
-                'result' => $resultMapping[$diagnosis->result] ?? $diagnosis->result,
+                'result' => implode('・', $readableResults),
             ];
         });
 
