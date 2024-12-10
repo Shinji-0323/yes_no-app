@@ -94,8 +94,9 @@
                 document.getElementById('result_area').classList.add('txt_display');
                 document.getElementById('result_area').classList.remove('txt_hide');
 
-                const result = determineResult();
-                document.getElementById('diagnosis_result').value = result;
+                const results = determineResult(); // 配列で結果を取得
+                const diagnosisResult = results.join(','); // カンマで区切って文字列に変換
+                document.getElementById('diagnosis_result').value = diagnosisResult;
             }
 
             function determineResult() {
@@ -103,8 +104,16 @@
                 for (let result in results) {
                     scores[result] = results[result].filter(q => yesAnswers.includes(q)).length;
                 }
-                return Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-            }
+
+                // 最大スコアを計算
+                const maxScore = Math.max(...Object.values(scores));
+
+                // 最大スコアに該当するすべての結果を返す
+                const matchedResults = Object.keys(scores).filter(key => scores[key] === maxScore);
+
+                // 結果が存在しない場合の対応
+                return matchedResults.length > 0 ? matchedResults : ['診断結果が判定できません'];
+                }
 
             function resetQuiz() {
                 // 質問の表示をリセット

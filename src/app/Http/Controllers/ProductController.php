@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class ProductController extends Controller
 {
-    public function normal()
+    public function normal(): View
     {
         return view('products.normal');
     }
 
-    public function oily()
+    public function oily(): View
     {
         return view('products.oily');
     }
 
-    public function dry()
+    public function dry(): View
     {
         return view('products.dry');
     }
 
-    public function combo()
+    public function combo(): View
     {
         return view('products.combo');
     }
