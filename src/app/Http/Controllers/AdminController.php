@@ -63,11 +63,18 @@ class AdminController extends Controller
         // データを整形してCSV用に準備
         $csvData = [];
         foreach ($results as $result) {
+            $resultLabels = array_map(function ($item) use ($resultMapping) {
+                return $resultMapping[$item] ?? $item;
+            }, explode(',', $result->result));
+
+            // 結果を文字列に変換
+            $formattedResult = implode('・', $resultLabels);
+
             $csvData[] = [
                 $result->id,
                 $genderMapping[$result->gender] ?? $result->gender,
                 $result->age . '代',
-                $resultMapping[$result->result] ?? $result->result,
+                $formattedResult,
             ];
         }
 
