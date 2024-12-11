@@ -61,3 +61,18 @@
     text-decoration: none;
     color: black;
 }
+
+@media screen and (max-width: 768px) {
+    .result-page {
+        width: 100%; /* 幅を画面いっぱいにする */
+    }
+
+    .result-page__title {
+        font-size: 20px; /* フォントサイズを縮小 */
+    }
+
+    .answer__best {
+        font-size: 14px; /* ボタンの文字サイズを縮小 */
+        padding: 8px; /* ボタンの余白を調整 */
+    }
+}

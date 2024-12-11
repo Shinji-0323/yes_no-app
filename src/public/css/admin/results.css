@@ -42,3 +42,13 @@
     border-top: 1px solid gray;
     font-size: 15px;
 }
+
+@media screen and (max-width: 768px) {
+    .table__wrap {
+        width: 100%; /* テーブルの幅を画面いっぱいにする */
+        overflow-x: auto; /* 横スクロールを許可 */
+        width: 80%;
+        margin: auto;
+    }
+
+}

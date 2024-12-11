@@ -90,3 +90,25 @@
     background: red;
     opacity: 0.7;
 }
+
+@media screen and (max-width: 768px) {
+    .header__wrap,
+    .content__wrap {
+        width: 100%; /* 幅を画面いっぱいにする */
+    }
+
+    .content__title {
+        font-size: 20px; /* フォントサイズを縮小 */
+    }
+
+    .question_area {
+        font-size: 18px; /* 質問の文字サイズを縮小 */
+        padding-top: 15px; /* 余白を調整 */
+    }
+
+    .btn_yes,
+    .btn_no {
+        width: 80px; /* ボタンの幅を狭くする */
+        font-size: 14px; /* ボタンのフォントサイズを縮小 */
+    }
+}

@@ -79,15 +79,15 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-    .content__wrap {
+    .auth__wrap {
         width: 90%;
     }
 
-    .content__text {
+    .auth__header {
         font-size: 1.4rem;
     }
 
-    .content__button {
+    .form__item-button {
         font-size: 12px;
     }
 }

@@ -90,3 +90,31 @@
     border-radius: 4px;
     box-shadow: 3px 3px 3px #A9A9A9;
 }
+
+@media screen and (max-width: 768px) {
+    .start-page,
+    .gender-page,
+    .age-page {
+        width: 100%; /* 画面幅いっぱいを使用 */
+    }
+
+    .start-page__title,
+    .gender-page__title,
+    .age-page__title {
+        font-size: 20px; /* フォントサイズを縮小 */
+    }
+
+    .start-page__btn,
+    .gender-page__btn,
+    .age-page__btn {
+        width: 50%; /* ボタン幅を広げる */
+        height: 60px; /* ボタンの高さを縮小 */
+        font-size: 18px; /* フォントサイズを調整 */
+    }
+
+    .age-page__select {
+        width: 80%; /* セレクトボックスの幅を広げる */
+        font-size: 16px; /* フォントサイズを調整 */
+        margin: 20px;
+    }
+}

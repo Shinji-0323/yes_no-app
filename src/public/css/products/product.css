@@ -35,3 +35,19 @@
     text-decoration: none;
     color: black;
 }
+
+@media screen and (max-width: 768px) {
+    .item__wrap {
+        width: 100%; /* 商品情報を全幅表示 */
+        padding: 10px; /* 全体の余白を縮小 */
+    }
+
+    .header__title {
+        font-size: 18px; /* フォントサイズを縮小 */
+    }
+
+    .result-page__actions {
+        width: 50%; /* ボタンの幅を広げる */
+        font-size: 14px; /* フォントサイズを縮小 */
+    }
+}
