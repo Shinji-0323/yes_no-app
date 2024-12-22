@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\YesNoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InterviewController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
@@ -29,6 +30,13 @@ Route::get('/products/normal', [ProductController::class, 'normal'])->name('norm
 Route::get('/products/oily', [ProductController::class, 'oily'])->name('oily');
 Route::get('/products/dry', [ProductController::class, 'dry'])->name('dry');
 Route::get('/products/combo', [ProductController::class, 'combo'])->name('combo');
+
+Route::get('/interview/start', [InterviewController::class, 'index'])->name('interview.start');
+Route::get('/interview/name', [InterviewController::class, 'name'])->name('interview.name');
+Route::post('/interview/age', [InterviewController::class, 'age'])->name('interview.age');
+Route::post('/interview/index', [InterviewController::class, 'interview'])->name('interview');
+Route::get('/interview/results', [InterviewController::class, 'results'])->name('interview.results');
+Route::post('/interview/result', [InterviewController::class, 'storeResult'])->name('interview.result.store');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function () {
     Route::get('/register', function () {

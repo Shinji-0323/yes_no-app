@@ -28,6 +28,7 @@
                             </li>
                         @else
                             <li class="nav__item"><a class="nav__item-link" href="{{ route('index')}}">肌タイプ診断</a></li>
+                            <li class="nav__item"><a class="nav__item-link" href="{{ route('interview.start')}}">Health & Beauty</a></li>
                             <li class="nav__item"><a class="nav__item-link" href="/register">管理者登録</a></li>
                             <li class="nav__item"><a class="nav__item-link" href="/login">管理者ログイン</a></li>
                         @endif

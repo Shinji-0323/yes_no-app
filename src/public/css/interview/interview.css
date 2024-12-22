@@ -1,0 +1,120 @@
+.start-page,
+.name-page,
+.age-page {
+    width: 90%;
+    text-align: center;
+}
+
+.start-page__title,
+.name-page__title,
+.age-page__title {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.start-page__text {
+    font-size: 20px;
+}
+
+.start-page__form,
+.name-page__form,
+.age-page__form {
+    padding: 20px;
+}
+
+.start-page__btn {
+    width: 50%;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.start-page__btn:checked {
+    color: #eee;
+}
+
+.start-page__btn:disabled {
+    color: #eee;
+    cursor: not-allowed;
+}
+
+.name-page__btn {
+    width: 20%;
+    height: 50px;
+    font-size: 15px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.male {
+    background-color: lightskyblue;
+}
+
+.female {
+    background-color: lightpink;
+}
+
+.age-page__select {
+    width: 30%;
+    height: 40px;
+    padding-left: 10px;
+    border-right: 1px solid #cccccc;
+    background-color: #fff;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.age-page__btn {
+    width: 20%;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+@media screen and (max-width: 768px) {
+    .start-page,
+    .name-page,
+    .age-page {
+        width: 100%; /* 画面幅いっぱいを使用 */
+    }
+
+    .start-page__title,
+    .name-page__title,
+    .age-page__title {
+        font-size: 20px; /* フォントサイズを縮小 */
+    }
+
+    .start-page__btn,
+    .name-page__btn,
+    .age-page__btn {
+        width: 50%; /* ボタン幅を広げる */
+        height: 60px; /* ボタンの高さを縮小 */
+        font-size: 18px; /* フォントサイズを調整 */
+    }
+
+    .age-page__select {
+        width: 80%; /* セレクトボックスの幅を広げる */
+        font-size: 16px; /* フォントサイズを調整 */
+        margin: 20px;
+    }
+}
