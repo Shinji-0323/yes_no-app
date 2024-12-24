@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InterviewRequest;
+use App\Http\Requests\NameRequest;
+use App\Http\Requests\AgeRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,15 +21,17 @@ class InterviewController extends Controller
         return view('interview/name');
     }
 
-    public function age(Request $request): View
+    public function age(NameRequest $request): View
     {
-        session(['name' => $request->name]); // 性別をセッションに保存
+        $validated = $request->validated(); // バリデーション済みデータを取得
+        session(['name' => $validated['name']]); // 名前をセッションに保存
         return view('interview/age');
     }
 
-    public function interview(Request $request): View
+    public function interview(AgeRequest $request): View
     {
-        session(['age' => $request->age]); // 年代をセッションに保存
+        $validated = $request->validated(); // バリデーション済みデータを取得
+        session(['age' => $validated['age']]); // 年齢をセッションに保存
         return view('interview/index');
     }
 

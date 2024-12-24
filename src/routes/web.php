@@ -33,7 +33,7 @@ Route::get('/products/combo', [ProductController::class, 'combo'])->name('combo'
 
 Route::get('/interview/start', [InterviewController::class, 'index'])->name('interview.start');
 Route::get('/interview/name', [InterviewController::class, 'name'])->name('interview.name');
-Route::post('/interview/age', [InterviewController::class, 'age'])->name('interview.age');
+Route::get('/interview/age', [InterviewController::class, 'age'])->name('interview.age');
 Route::post('/interview/index', [InterviewController::class, 'interview'])->name('interview');
 Route::get('/interview/results', [InterviewController::class, 'results'])->name('interview.results');
 Route::post('/interview/result', [InterviewController::class, 'storeResult'])->name('interview.result.store');

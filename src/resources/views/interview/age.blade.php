@@ -10,7 +10,7 @@
         <div class="age-page__inner">
             <form class="age-page__form" action="{{ route('interview') }}" method="post">
                 @csrf
-                <input class="age-page__input" type="number" name="age" placeholder="例:25" value="{{ old('age') }}" min="1" max="120" required>
+                <input class="age-page__input" type="number" name="age" placeholder="例:25" value="{{ old('age') }}" min="1" max="120">
                 <div class="contact-form__error-message">
                     @if ($errors->has('age'))
                         <p class="contact-form__error-message-age">{{ $errors->first('age') }}</p>

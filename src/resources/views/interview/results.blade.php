@@ -8,7 +8,7 @@
     <div class="result-page">
         <h1 class="result-page__title">診断結果</h1>
         <div class="result-page__inner">
-            <h2 class="answer__header">Yesの回答数</h2>
+            <h2 class="answer__header">Yesの合計</h2>
             <p class="answer__count">{{ $yesCount }} 個</p>
         </div>
         <button class="result-page__actions">

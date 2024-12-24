@@ -43,40 +43,47 @@
     cursor: not-allowed;
 }
 
+.contact-form__input {
+    width: 30%;
+    height: 40px;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: #F4F4F4;
+    color: #BEB1A6;;
+}
+
+.contact-form__error-message-name {
+    color: red;
+    font-size: 15px;
+}
+
 .name-page__btn {
     width: 20%;
     height: 50px;
     font-size: 15px;
-    background-color: white;
     text-align: center;
     text-decoration: none;
     border: 1px solid #eee;
     cursor: pointer;
-    margin: 10px;
+    margin: 15px;
     border-radius: 4px;
     box-shadow: 3px 3px 3px #A9A9A9;
 }
 
-.male {
-    background-color: lightskyblue;
-}
-
-.female {
-    background-color: lightpink;
-}
-
-.age-page__select {
-    width: 30%;
+.age-page__input {
+    width: 20%;
     height: 40px;
     padding-left: 10px;
-    border-right: 1px solid #cccccc;
-    background-color: #fff;
-    border: none;
-    color: black;
     cursor: pointer;
     font-size: 15px;
-    border-radius: 4px;
-    box-shadow: 3px 3px 3px #A9A9A9;
+    background-color: #F4F4F4;
+    color: #BEB1A6;;
+}
+
+.contact-form__error-message-age {
+    color: red;
+    font-size: 15px;
 }
 
 .age-page__btn {
@@ -87,6 +94,7 @@
     text-decoration: none;
     border: 1px solid #eee;
     cursor: pointer;
+    margin: 15px;
     border-radius: 4px;
     box-shadow: 3px 3px 3px #A9A9A9;
 }
