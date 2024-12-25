@@ -17,7 +17,10 @@ class CreateInterviewsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('age');
-            $table->string('result');
+            $table->integer('beauty_count')->default(0);
+            $table->integer('period_count')->default(0);
+            $table->integer('menopause_count')->default(0);
+            $table->integer('total_count')->default(0);
             $table->timestamps();
         });
     }
