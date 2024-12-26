@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Diagnosis;
+use App\Models\Interview;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminController extends Controller
@@ -94,6 +95,50 @@ class AdminController extends Controller
             foreach ($csvData as $row) {
                 fputcsv($file, $row);
             }
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
+    public function interview_results(): \Illuminate\View\View
+    {
+        $interviews = Interview::all();
+
+        return view('admin.interview_results', ['interviews' => $interviews]);
+    }
+
+    public function interview_export(): StreamedResponse
+    {
+        $interviews = Interview::all(); // すべてのインタビュー結果を取得
+
+        $fileName = 'interview_results.csv';
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename={$fileName}",
+        ];
+
+        $callback = function () use ($interviews) {
+            $file = fopen('php://output', 'w');
+            if ($file === false) {
+                throw new \RuntimeException('Failed to open output stream.');
+            }
+
+            // CSVのヘッダー
+            fputcsv($file, ['ID', '名前', '年齢', '美容', '生理', '更年期', '合計']);
+
+            foreach ($interviews as $interview) {
+                fputcsv($file, [
+                    $interview->id,
+                    $interview->name,
+                    $interview->age,
+                    $interview->beauty_count,
+                    $interview->period_count,
+                    $interview->menopause_count,
+                    $interview->total_count,
+                ]);
+            }
+
             fclose($file);
         };
 

@@ -58,4 +58,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/results', [AdminController::class, 'results'])->name('admin.results');
     Route::get('/admin/results/csv', [AdminController::class, 'export'])->name('admin.results.csv');
+    Route::get('/admin/interview_results', [AdminController::class, 'interview_results'])->name('admin.interview_results');
+    Route::get('/admin/interview_results/csv', [AdminController::class, 'interview_export'])->name('admin.interview_results.csv');
 });

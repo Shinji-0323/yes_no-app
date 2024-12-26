@@ -1,0 +1,57 @@
+.header-wrap {
+    width: 90%;
+}
+
+.admin__title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.export-form {
+    text-align: right;
+    margin: 15px;
+}
+
+.export__btn {
+    font-size: 14px;
+    padding: 5px;
+    background-color: #45c1fd;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px #A9A9A9;
+}
+
+.table__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.skin-age__table {
+    width: 100%;
+}
+
+.table__header,
+.table__item {
+    width: 12%;
+    text-align: center;
+    height: 70px;
+    border-top: 1px solid gray;
+    font-size: 15px;
+}
+
+.name {
+    width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .table__wrap {
+        width: 100%; /* テーブルの幅を画面いっぱいにする */
+        overflow-x: auto; /* 横スクロールを許可 */
+        width: 80%;
+        margin: auto;
+    }
+
+}

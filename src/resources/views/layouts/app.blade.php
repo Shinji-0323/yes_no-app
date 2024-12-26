@@ -20,6 +20,8 @@
                 <nav class="nav__content">
                     <ul class="nav__list">
                         @if(Auth::check())
+                            <li class="nav__item"><a class="nav__item-link" href="{{ route('admin.results')}}">肌タイプ結果</a></li>
+                            <li class="nav__item"><a class="nav__item-link" href="{{ route('admin.interview_results')}}">Health & Beauty 結果</a></li>
                             <li class="nav__item">
                                 <form class="nav__item-link" action="/logout" method="post">
                                     @csrf
