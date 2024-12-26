@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="header-wrap">
-        <h1 class="admin__title">診断結果一覧</h1>
+        <h1 class="admin__title">Health & Beauty 結果一覧</h1>
         <div class="export-form">
             <form action="{{ route('admin.interview_results.csv') }}" method="get">
                 @csrf
