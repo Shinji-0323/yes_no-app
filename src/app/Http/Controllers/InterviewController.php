@@ -62,9 +62,9 @@ class InterviewController extends Controller
         Interview::create([
             'name' => session('name'),
             'age' => session('age'),
-            'beauty_count' => $yesCounts['beauty'],
-            'period_count' => $yesCounts['period'],
-            'menopause_count' => $yesCounts['menopause'],
+            'beauty_count' => $yesCounts['beauty'] ?? 0,
+            'period_count' => $yesCounts['period'] ?? 0,
+            'menopause_count' => $yesCounts['menopause'] ?? 0,
             'total_count' => array_sum($yesCounts),
         ]);
 
@@ -122,8 +122,8 @@ class InterviewController extends Controller
      */
     public function storeResult(Request $request): RedirectResponse
     {
-        $category = $request->input('category');
-        $yesCount = $request->input('yesCount');
+        $category = strtolower($request->input('category')); // カテゴリ名を小文字に統一
+        $yesCount = (int) $request->input('yesCount'); // Yesの数を取得
 
         // セッションにYes数を保存
         $yesCounts = session('yes_counts', []);
@@ -142,9 +142,9 @@ class InterviewController extends Controller
         ]);
 
         return view('interview.results', [
-            'beautyCount' => $yesCounts['beauty'],
-            'periodCount' => $yesCounts['period'],
-            'menopauseCount' => $yesCounts['menopause'],
+            'beautyCount' => $yesCounts['beauty'] ?? 0,
+            'periodCount' => $yesCounts['period'] ?? 0,
+            'menopauseCount' => $yesCounts['menopause'] ?? 0,
             'totalCount' => array_sum($yesCounts),
         ]);
     }

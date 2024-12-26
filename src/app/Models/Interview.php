@@ -12,6 +12,9 @@ class Interview extends Model
     protected $fillable = [
         'name',
         'age',
-        'result',
+        'beauty_count',
+        'period_count',
+        'menopause_count',
+        'total_count',
     ];
 }
